@@ -21,6 +21,8 @@ const Character = () => {
     }
     return (
         <Card className="m-auto d-flex w-75 p-5">
+             {character.name ? (
+            <>
              <Card.Title>{character.name} 
              <Button variant="link" onClick={onToggle}>
              {clicked ? (<img src={starFill} alt="Bootstrap" width="32" height="32"/>):(<img src={star} alt="Bootstrap" width="32" height="32"/>)}
@@ -41,8 +43,9 @@ const Character = () => {
                         </>
                     ))}
                     </p>
-
                 </Card.Text>
+            </>
+                ):<p>Loading...</p>}
         </Card>
     )
 }
